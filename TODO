@@ -1,0 +1,3 @@
+See ideal.gui for how I want to represent the gui:
+1. Write a generic s-expr parser to turn s-expr into trees.
+2. Walk the trees and create/update/delete widgets.

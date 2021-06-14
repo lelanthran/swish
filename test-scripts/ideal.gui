@@ -1,0 +1,21 @@
+(window name=value name = value
+   (hsplitter name=value name=value
+      (vlayout (button name=value name = value)
+               (textedit name = value name = value)
+               (button name = value))
+      (vlayout (label name = value name = value)
+               (radio-group name = value
+                  (radio-button name = value name = value)
+                  (radio-button name = value name = value)
+                  (radio-button name = value name = value)
+                  (radio-button name = value name = value))
+               (checkbox-group name = value
+                  (checkbox name=value name = value)
+                  (checkbox name=value name = value)
+                  (checkbox name=value name = value)
+                  (checkbox name=value name = value)))))
+
+(style id=some-id name = value name = value
+       name = value)
+
+

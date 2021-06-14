@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.2 -->
+<interface>
+  <requires lib="gtk+" version="3.6"/>
+  <object class="GtkDialog" id="dialog1">
+    <property name="name">My Dialog</property>
+    <property name="can_focus">False</property>
+    <property name="type_hint">normal</property>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="vbox1">
+        <property name="can_focus">False</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="hbuttonbox1">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkButton" id="ok_button">
+                <property name="label">gtk-apply</property>
+                <property name="can_focus">False</property>
+                <property name="receives_default">False</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="button_clicked" object="hbuttonbox1" after="yes" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

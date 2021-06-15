@@ -1,6 +1,21 @@
+Possibly have each field of a widget bound to a program variable? Will
+have to be specified at runtime, though.
+
+   bind_value : value of widget stored in specified variable
+      bind_value = global_variable_name
+
+   bind_event : event specified is routed to specified function
+      bind_event = clicked,global_function_name
+      bind_event = changed,global_function_name
+
+On second thought maybe have callback functions populate from a data model?
+
+=======================
+
+Basic usage:
 (window name=value name = value
    (hsplitter name=value name=value
-      (vlayout (button name=value name = value)
+      (vlayout (button name=value name = value bind =)
                (textedit name = value name = value)
                (button name = value))
       (vlayout (label name = value name = value)
@@ -15,7 +30,50 @@
                   (checkbox name=value name = value)
                   (checkbox name=value name = value)))))
 
-(style id=some-id name = value name = value
-       name = value)
+(window name=value name=value
+   (hsplitter (tree name=value name=value
+                    bind = tree_nodes)
+              (table name = value name = value
+                    bind = table_cells)))
+
+
+=======================
+
+Short way of setting a bunch of name=value pairs to a single name.
+
+(define-style id=some-id name = value name = value
+              name = value)
+
+=======================
+
+A way to define a new component (comprised of existing widgets, and used the
+same way). IDs of children are constructed using the parent id as a prefix,
+like so: parent-id.child-id.grandchild-id.
+
+(define-component component-name
+   (window (editbox ...)
+           (button ...)
+           (gridlayout ...
+               (button ...)
+               (button ...))))
+
+# More complicated example, using tree widget.
+
+(define-component my-tree
+   (vlayout (tree name=value name=value # 'name' defines value for widget
+                  child-name=value)))   # 'child-name' defines value for
+                                        # children only
+
+TODO: Don't like this; perhaps have the only child property be "child-style".
+Unfortunately both ways still don't allow for specifying grandchildren
+properties.
+
+=======================
+
+// Some data structures useful to composite widgets (tree, tables)
+...
+widget_tree_t *tree_nodes;
+widget_table_t *table_cells;
+
 
 
